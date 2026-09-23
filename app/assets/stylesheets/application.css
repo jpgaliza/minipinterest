@@ -1,0 +1,286 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+:root {
+  --ink: #25211f;
+  --muted: #756e69;
+  --paper: #fffdfb;
+  --line: #eee5df;
+  --accent: #d9273f;
+  --accent-dark: #b71f34;
+  --accent-soft: #fde9ec;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, #fff6f0 0, transparent 32rem),
+    var(--paper);
+  font-family: Georgia, "Times New Roman", serif;
+}
+a {
+  color: inherit;
+}
+.site-header {
+  background: rgba(255, 253, 251, 0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+.brand-mark {
+  color: var(--accent);
+}
+.site-brand {
+  letter-spacing: -0.03em;
+}
+.site-nav .nav-link {
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+}
+.site-nav .nav-link:hover {
+  color: var(--ink);
+}
+.btn-danger {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.btn-danger:hover,
+.btn-danger:focus {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+.btn-outline-danger {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.btn-outline-danger:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.page-heading {
+  max-width: 760px;
+}
+.eyebrow {
+  color: var(--accent);
+  font:
+    700 0.72rem/1 system-ui,
+    sans-serif;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.page-title {
+  font-size: clamp(2.25rem, 5vw, 4.4rem);
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+}
+.page-copy {
+  color: var(--muted);
+  font:
+    1rem/1.6 system-ui,
+    sans-serif;
+}
+.post-card {
+  overflow: hidden;
+  border: 1px solid var(--line) !important;
+  border-radius: 1.25rem;
+  background: #fff;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2.5rem rgba(74, 45, 34, 0.1) !important;
+}
+.post-card-image {
+  height: 320px;
+  object-fit: cover;
+}
+.post-card-placeholder,
+.post-image-placeholder {
+  background: linear-gradient(135deg, #f4e8e0, #fbeff1);
+  color: var(--muted);
+  font:
+    0.85rem system-ui,
+    sans-serif;
+}
+.post-card .card-body {
+  padding: 1.25rem;
+}
+.post-card .card-title {
+  letter-spacing: -0.025em;
+}
+.post-card .card-text,
+.post-detail-panel p {
+  color: var(--muted);
+  font:
+    0.9rem/1.55 system-ui,
+    sans-serif;
+}
+.post-meta {
+  color: var(--muted);
+  font:
+    0.78rem system-ui,
+    sans-serif;
+}
+.post-detail-image {
+  max-height: 78vh;
+  object-fit: cover;
+}
+.post-detail-panel {
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: #fff;
+}
+.post-detail-panel .card-body {
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+.post-detail-panel p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.form-shell {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.form-panel {
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: #fff;
+}
+.form-label {
+  margin-bottom: 0.45rem;
+  font:
+    700 0.8rem system-ui,
+    sans-serif;
+}
+.form-control {
+  border-color: var(--line);
+  border-radius: 0.7rem;
+  padding: 0.75rem 0.9rem;
+  font:
+    0.95rem system-ui,
+    sans-serif;
+}
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(217, 39, 63, 0.12);
+}
+.form-hint {
+  color: var(--muted);
+  font:
+    0.8rem system-ui,
+    sans-serif;
+}
+.auth-page {
+  min-height: calc(100vh - 73px);
+  display: grid;
+  place-items: center;
+  padding: 3rem 1rem;
+}
+.auth-panel {
+  width: min(100%, 480px);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow: 0 1.25rem 3rem rgba(74, 45, 34, 0.08);
+}
+.auth-panel h1 {
+  letter-spacing: -0.04em;
+}
+.auth-panel .field {
+  margin-bottom: 1rem;
+}
+.auth-panel .field label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font:
+    700 0.8rem system-ui,
+    sans-serif;
+}
+.auth-panel .field input:not([type="checkbox"]) {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  padding: 0.75rem 0.9rem;
+  font:
+    0.95rem system-ui,
+    sans-serif;
+}
+.auth-panel .field input:focus {
+  border-color: var(--accent);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(217, 39, 63, 0.12);
+}
+.auth-panel .remember-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font:
+    0.85rem system-ui,
+    sans-serif;
+}
+.auth-panel .remember-field label {
+  margin: 0;
+  font-weight: 400;
+}
+.auth-panel .actions input {
+  width: 100%;
+  border: 0;
+  border-radius: 0.7rem;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  background: var(--accent);
+  font:
+    700 0.9rem system-ui,
+    sans-serif;
+}
+.auth-panel .actions input:hover {
+  background: var(--accent-dark);
+}
+.auth-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font:
+    0.82rem system-ui,
+    sans-serif;
+}
+.auth-links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.auth-links a:hover {
+  text-decoration: underline;
+}
+.alert-danger {
+  border: 0;
+  background: var(--accent-soft);
+  color: #8e1e31;
+  font:
+    0.85rem/1.5 system-ui,
+    sans-serif;
+}
+@media (max-width: 575px) {
+  .post-card-image {
+    height: 260px;
+  }
+  .page-title {
+    font-size: 2.6rem;
+  }
+}

@@ -1,0 +1,11 @@
+<% content_for :title, "New post" %>
+
+<div class="container py-5">
+  <div class="form-shell">
+    <p class="eyebrow mb-2">Compartilhe uma ideia</p>
+    <h1 class="page-title mb-4">Novo post</h1>
+    <div class="form-panel p-4 p-md-5">
+      <%= render "form", post: @post %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div class="alert alert-danger mb-4">
+      <strong>Não foi possível salvar o post.</strong>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :title, "Título", class: "form-label" %>
+    <%= form.text_field :title, class: "form-control", placeholder: "Dê um nome à sua ideia" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :description, "Descrição", class: "form-label" %>
+    <%= form.textarea :description, class: "form-control", rows: 5, placeholder: "Conte um pouco mais sobre este post" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :image, "Imagem", class: "form-label" %>
+    <%= form.file_field :image, class: "form-control", accept: "image/*" %>
+    <div class="form-hint mt-2">Escolha uma imagem para dar vida à sua publicação.</div>
+  </div>
+  
+  <div class="d-flex gap-2 align-items-center">
+    <%= form.submit post.persisted? ? "Salvar alterações" : "Publicar post", class: "btn btn-danger px-4" %>
+    <%= link_to "Cancelar", post.persisted? ? post : posts_path, class: "btn btn-link text-body-secondary text-decoration-none" %>
+  </div>
+<% end %>

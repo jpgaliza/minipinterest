@@ -1,0 +1,35 @@
+<% content_for :title, @post.title %>
+
+<div class="container py-5">
+  <div class="row g-4 align-items-start">
+    <div class="col-lg-7">
+      <% if @post.image.attached? %>
+        <%= image_tag @post.image, class: "img-fluid rounded-4 shadow-sm w-100 post-detail-image" %>
+      <% else %>
+        <div class="d-flex align-items-center justify-content-center post-image-placeholder rounded-4 shadow-sm" style="height: 560px;">
+          Sem imagem
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card shadow-sm post-detail-panel h-100">
+        <div class="card-body p-4">
+          <%= link_to posts_path, class: "text-decoration-none text-body-secondary small" do %>
+            <i class="bi bi-arrow-left me-1"></i> Voltar para explorar
+          <% end %>
+          <p class="eyebrow mt-5 mb-2">Post compartilhado por <%= @post.user.username %></p>
+          <h1 class="card-title display-5 mb-3"><%= @post.title %></h1>
+          <p class="card-text"><%= @post.description %></p>
+          <% if user_signed_in? && @post.user == current_user %>
+            <div class="d-flex gap-2 mt-5 pt-4 border-top">
+              <%= link_to "Editar", edit_post_path(@post), class: "btn btn-outline-danger btn-sm" %>
+              <%= button_to "Excluir", @post, method: :delete, class: "btn btn-link btn-sm text-danger text-decoration-none", data: { turbo_confirm: "Excluir este post?" } %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,14 @@
+<div id="<%= dom_id post %>">
+  <article class="card post-card">
+    <% if post.image.attached? %>
+      <%= image_tag post.image, class: "card-img-top post-card-image" %>
+    <% else %>
+      <div class="post-card-placeholder d-flex align-items-center justify-content-center" style="height: 220px;">Sem imagem</div>
+    <% end %>
+    <div class="card-body">
+      <h2 class="h5 card-title"><%= post.title %></h2>
+      <p class="card-text"><%= post.description %></p>
+      <span class="post-meta"><i class="bi bi-person-fill me-1"></i><%= post.user.username %></span>
+    </div>
+  </article>
+</div>
